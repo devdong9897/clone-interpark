@@ -32,10 +32,27 @@ body {
 .inner {
   display: block;
   position: relative;
-  width: 1280px;
-  /* width: 128rem; */
+  max-width: 1280px;
   margin: 0 auto;
 }
+@media screen and (max-width: 1280px) {
+  .inner {
+    max-width: 1024px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .inner {
+    max-width: 760px;
+  }
+}
+
+@media screen and (max-width: 760px) {
+  .inner {
+    max-width: 100%;
+  }
+}
+
+/* float 해제 */
 .clearfix::after {
   display: block;
   position: relative;
@@ -44,6 +61,7 @@ body {
   clear: both;
 }
 
+/* swiper 버튼 */
 .sw-bt {
   width: 50px;
   height: 50px;
@@ -54,19 +72,17 @@ body {
   font-size: 0;
   cursor: pointer;
 }
-/* 다음 버튼 */
 .sw-next {
   position: absolute;
   top: 50%;
-  right: 0px;
+  right: 0;
   transform: translate(50%, -50%);
   z-index: 99;
 }
-/* 이전 버튼 */
 .sw-prev {
   position: absolute;
   top: 50%;
-  left: 0px;
+  left: 0;
   transform: translate(-50%, -50%);
   z-index: 99;
 }
@@ -83,15 +99,16 @@ body {
 .sw-prev::before {
   transform: scaleX(-100%);
 }
+
 /* section 내용 구조 */
 .section-top {
   text-align: center;
-  margin-bottom: 30px;
 }
 .section-top > h2 {
   font-size: 28px;
   line-height: 33px;
   font-weight: 700;
+  margin-bottom: 10px;
 }
 .section-top > p {
   font-size: 18px;
@@ -100,7 +117,7 @@ body {
 }
 .section-top .btns {
   margin: 25px 0;
-  /* inline-block 은 html 코드의 Enter도 글자로 인식 */
+  /* inline-block 은 html 코드의 Enter 도 글자로 인식 */
   /* 그래서 공백글자가 들어간다. */
   font-size: 0;
 }
@@ -119,29 +136,27 @@ body {
   background: #111 !important;
   color: #fff !important;
 }
+
 .section-slide {
   position: relative;
   margin-bottom: 20px;
 }
 .section-bottom {
-  /* 버튼 가운데 */
   text-align: center;
 }
 .bt-link-shop {
-  /* 만약 block이면 width를 주고, margin: 0 auto;코드가 복잡해짐 */
-  /* inline-block 이므로 글자처럼 text-align:center */
+  /* 만약 block 이면 width 를 주고, margin: 0 auto; */
+  /* inline-block 이므로 글자처럼 text-align:center  */
   display: inline-block;
   font-size: 16px;
   line-height: 56px;
   padding: 0 40px;
   border: 1px solid rgba(0, 0, 0, 0.2);
-  /* 56나누기 2 */
   border-radius: 28px;
   color: #333;
   font-weight: 700;
 }
 .bt-link-shop::after {
-  /* block면 밑으로 내려감 그래서 inlin-block로 변경 */
   display: inline-block;
   position: relative;
   content: "";
@@ -169,8 +184,7 @@ body {
   border-radius: 50%;
   border: 1px solid rgba(0, 0, 0, 0.15);
   background: #fff url("../images/btn_topArrow.svg") no-repeat center;
-  box-shadow: 0 0 0.5rem rgba(0,0,0,.16);
-  /* 글자 안보이게 */
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.16);
   font-size: 0;
   margin-top: 10px;
 }
@@ -193,16 +207,18 @@ body {
 
 .header-left {
   position: relative;
-  /* 자식들이 모두...absolute라서. */
-  /* width, height 준다. */
+  /* 자식들이 모두.. absoluter 라서. */
+  /*  width, height 준다 */
   width: calc(118px + 455px + 20px);
   height: 50px;
+
   float: left;
 }
+
 .logo {
-  /* a 태그는 inline이므로 width, height 안됨 */
-  /* a 태그는 inline이므로 margin, padding 일부 안됨 */
-  /* a 태그는 inline이므로 최소 inline-block으로.. */
+  /* a 태그는 inline 이므로 width, height 안됨 */
+  /* a 태그는 inline 이므로 maring, padding 일부 안됨 */
+  /* a 태그는 inline 이므로 최소 inline-block 으로 */
   display: inline;
   display: inline-block;
   display: block;
@@ -227,7 +243,7 @@ body {
   padding: 0px 15px;
 }
 .search-text {
-  width: calc(100% - 28px);
+  width: calc(100% - 25px);
   height: 50px;
   border: 0;
   padding-right: 30px;
@@ -245,7 +261,7 @@ body {
   height: 17px;
   background: url("../images/btn_search.svg") no-repeat center;
   cursor: pointer;
-  /* 조건: inline 또는 inline-block */
+  /* 조건 : inline 또는 inline-block */
   vertical-align: -3px;
 }
 .search-reset {
@@ -255,11 +271,14 @@ body {
   border: 0;
   font-size: 0;
   cursor: pointer;
+
   width: 16px;
   height: 16px;
   background: url("../images/btn_searchDelete.svg") no-repeat center;
 }
+
 .header-right {
+  position: relative;
   float: right;
 }
 .member-list {
@@ -272,9 +291,10 @@ body {
   float: left;
   margin-right: 20px;
 }
-.member-list li > :last-child {
+.member-list > li:last-child {
   margin-right: 0;
 }
+
 .member-list > li > a {
   font-size: 15px;
   color: #111;
@@ -293,6 +313,7 @@ body {
 .mypage-bt:hover .mypage {
   display: block;
 }
+
 .mypage {
   display: none;
   position: absolute;
@@ -303,27 +324,36 @@ body {
   border-radius: 13px;
   box-shadow: 0 0 16px rgba(0, 0, 0, 0.2);
 }
+
 .mypage-list {
 }
 .mypage-list li {
   margin: 10px 0;
 }
-.mypage-list li:first-child {
+.member-list li:first-child {
   margin-top: 0;
 }
-
-.mypage-list li:last-child {
+.member-list li:last-child {
   margin-bottom: 0;
 }
+
 .mypage-list li a {
-  /* 글자 줄내림 없다 */
-  /* inline은 한줄로 배치 */
+  /* 글자 줄내림 없다. */
+  /* inline 은 한줄로 배치 */
   white-space: nowrap;
   font-size: 14px;
 }
-.header-down li a b {
+.mypage-list li a b {
   font-weight: 500;
 }
+
+.mb-mypage {
+  position: absolute;
+  right: 10px;
+  top: -5px;
+  display: none;
+}
+
 .header-down {
 }
 
@@ -332,9 +362,6 @@ body {
   float: left;
   margin-top: 30px;
 }
-
-/* float때문에 적어줌 */
-
 .service-list li {
   float: left;
   padding-right: 23px;
@@ -343,8 +370,8 @@ body {
   padding-right: 0;
   margin-right: 15px;
 }
+
 .service-list li a {
-  position: relative;
   font-size: 16px;
   color: #333;
   font-weight: 600;
@@ -361,7 +388,6 @@ body {
   float: left;
   margin-top: 30px;
 }
-
 .service-menu li {
   float: left;
 }
@@ -377,12 +403,74 @@ body {
 .service-menu li a::before {
   display: block;
   position: absolute;
-  top: calc(50% - 0.8rem);
+  top: calc(50% - 16px / 2);
   left: 0;
   content: "";
   width: 1px;
   height: 16px;
-  background: rgb(0, 0, 0, 0.2);
+  background: rgba(0, 0, 0, 0.2);
+}
+
+@media screen and (max-width: 1024px) {
+  .header {
+    border-bottom: 8px solid #f0f4f4;
+  }
+  .header .inner {
+    padding-top: 15px;
+    height: 230px;
+  }
+  .logo {
+    width: 77px;
+    height: 18px;
+    margin-left: 15px;
+  }
+
+  .header-left {
+    width: 100%;
+  }
+  .search {
+    left: 50%;
+    transform: translateX(-50%);
+    top: 140px;
+  }
+
+  .member-list {
+    display: none;
+  }
+  .mb-mypage {
+    display: block;
+  }
+
+  .header-down {
+    text-align: center;
+  }
+  .service-list {
+    display: inline-block;
+    float: none;
+    margin-top: 0px;
+  }
+
+  .service-list li {
+    padding-right: 20px;
+  }
+  .service-list li:last-child {
+    margin-right: 0px;
+  }
+
+  .service-list li a {
+    font-size: 12px;
+    font-weight: 400;
+  }
+  .service-list li a img {
+    display: block;
+    width: 48px;
+    height: 48px;
+    margin: 0 auto;
+  }
+
+  .service-menu {
+    display: none;
+  }
 }
 
 /* 추천이벤트 */
@@ -390,6 +478,7 @@ body {
   padding-top: 30px;
   padding-bottom: 90px;
 }
+
 .promotion .inner {
   height: 345px;
 }
@@ -405,44 +494,6 @@ body {
   width: 100%;
   height: auto;
 }
-/* 디자인 */
-.sw-bt {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  background: rgba(255, 255, 255, 0.8);
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.13);
-  font-size: 0;
-  cursor: pointer;
-}
-/* 다음 버튼 */
-.sw-next {
-  position: absolute;
-  top: 50%;
-  right: 0;
-  z-index: 99;
-}
-/* 이전 버튼 */
-.sw-prev {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  z-index: 99;
-}
-.sw-bt::before {
-  display: block;
-  position: absolute;
-  top: calc(50% - 8px);
-  left: calc(50% - 4px);
-  content: "";
-  width: 8px;
-  height: 16px;
-  background: url("../images/slider_arrow.svg") no-repeat center;
-}
-.sw-prev::before {
-  transform: scaleX(-100%);
-}
 
 /* 쇼핑추천 */
 .shopping {
@@ -452,28 +503,27 @@ body {
 .shopping .section-slide {
   height: 405px;
 }
+
 .sw-shopping {
   height: 100%;
 }
+
 .good {
   display: block;
-  /* 위 부모의 높이(405px)를 따라가라 */
   width: 100%;
   height: 100%;
   border-radius: 10px;
   border: 1px solid rgba(0, 0, 0, 0.2);
   background: #eeeeee;
-  /* 이미지 중간 */
   text-align: center;
-  /* 그림이 벗어나는걸 가려줌 */
   overflow: hidden;
 }
 .good > img {
   width: 100%;
   /* 배경색이 mix blend 되므로 색상이 섞인다. */
-  /* multiply는 흰색을 투명하게 한다. */
-  /* 자주 사용하지는 않는다. */
-  /* 포토샵처럼 이미지 블랜드가 가능하다. */
+  /* multiply 는 흰색을 투명하게 한다. */
+  /* 자주 사용하지는 않습니다. */
+  /* 포토샵 처럼 이미지 블랜드가 가능하다. */
   mix-blend-mode: multiply;
 }
 .good-info {
@@ -481,6 +531,7 @@ body {
   text-align: left;
   padding: 20px;
 }
+
 .good-info-list {
 }
 .good-info-list li {
@@ -495,27 +546,25 @@ body {
   color: #ef3e43;
 }
 .good-info-list li p {
-  /* 조건3. display: -webkit-box */
+  /* 3. display: -webkit-box */
   display: -webkit-box;
   font-size: 15px;
-  /* 한줄의 높이 */
   line-height: 18px;
   color: #111;
-  /* 가격이랑 제품 설명글자 사이 여백 */
   margin-top: 10px;
 
-  /* 내용이 한줄일 수도 있고 최대 2줄이다. */
+  /* 내용이 1줄일 수도 있고 최대 2줄이다 */
   /* 높이값을 지정해서 레이아웃을 지킨다. */
-  /* 내용이 넘치는 경우...처리 */
-  /* 카페에 작성해있음. 2줄 말줄임 */
-  /*조건1. 높이가 있어야 합니다. */
+  /* 내용이 넘치는 경우 ... 처리 */
+  /* 카페에 적어둘께요. 2줄 말줄임 */
+  /* 1. 높이가 있어야 합니다. */
   height: 36px;
-  /* 조건2. 넘치는 영역을 가린다. */
+  /* 2. 넘치는 영역을 가린다. */
   overflow: hidden;
-  /* 조건4. text-overflow: ellipsis */
+  /* 4. text-overflow: elipsis */
   text-overflow: ellipsis;
-  /* 조건5. 아래 코드를 입력한다. */
-  -webkit-line-clamp: 2; /*두줄임*/
+  /* 5. 아래 코드를 입력한다. */
+  -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
 }
 /* 투어특가 */
@@ -545,12 +594,13 @@ body {
   overflow: hidden;
 }
 .tour-img img {
-  /* absolute를 영역 중앙에 배치 */
+  /* absolute 를 영역 중앙에 배치 */
   position: absolute;
   top: 50%;
   left: 50%;
   /* 좌표, 영역말고 내용 즉, 보이는 부분만 이동 */
   transform: translate(-50%, -50%);
+
   width: 100%;
 }
 
@@ -566,9 +616,7 @@ body {
 }
 
 .tour-cate {
-
   display: inline-block;
-  /* inline-block 글자 써진 영역만큼 잡힘 */
   position: absolute;
   top: -39px;
   left: 0;
@@ -585,7 +633,7 @@ body {
   font-size: 15px;
   line-height: 18px;
   color: #4a95ff;
-  /* 1줄 말줄임... */
+  /* 1줄 말줄임 ...  */
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -611,19 +659,20 @@ body {
   height: 540px;
 }
 .ticket .section-slide .sw-bt {
-  top:  35%;
+  top: 35%;
 }
 
 .sw-ticket {
   height: 100%;
 }
+
 .ticket-link {
   display: block;
   width: 100%;
   height: 100%;
 }
+
 .ticket-img {
-  /* 티켓랭크 감싸고있음 */
   position: relative;
   width: 100%;
   height: 400px;
@@ -631,8 +680,8 @@ body {
 
   border-radius: 10px;
 }
+
 .ticket-img img {
-  /* 중앙정렬 */
   position: absolute;
   top: 50%;
   left: 50%;
@@ -656,10 +705,10 @@ body {
   content: "";
   width: 100%;
   height: 100%;
-  /* 그라데이션 */
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.04), rgba(0, 0, 0, 0.04)),
     linear-gradient(180deg, transparent 68.5%, rgba(0, 0, 0, 0.6));
 }
+
 .ticket-info {
   padding: 20px 10px;
   background: #fff;
@@ -685,12 +734,13 @@ body {
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
 }
+
 .ticket-hall {
   display: block;
   font-size: 15px;
   line-height: 18px;
   color: #666;
-  /* 1줄(제목이 길어지면) ... 처리 */
+  /* 1줄 ... 처리 */
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -710,17 +760,18 @@ body {
   border: 1px solid rgba(239, 62, 67, 0.3);
   border-radius: 3px;
 }
+
 /* 인터파크 라이브 */
 .live {
   padding-top: 30px;
   padding-bottom: 90px;
 }
+
 .live .section-top {
-  /* 인터파크이미지와 너무 붙어서 */
   margin-bottom: 25px;
 }
 .live .section-slide {
-  height: 450px;
+  height: 455px;
 }
 .sw-live {
   height: 100%;
@@ -733,30 +784,28 @@ body {
   border-radius: 10px;
   overflow: hidden;
 }
+
 .live-img {
   position: relative;
   width: 100%;
   height: 100%;
+  background: pink;
 }
 .live-img img {
-  /* 이미지 너비 , 높이 상관없이 가운데 정렬 */
-  /* 위에 라이브-이미지 안에.... */
+  /* 이미지 너비, 높이 상관없이 가운데 */
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 
   height: 100%;
-  width: auto;
 }
 .live-info {
-  /* 검정 반투명 */
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: greenyellow;
   background: rgba(0, 0, 0, 0.4);
   padding: 20px;
 }
@@ -764,23 +813,21 @@ body {
 .live-info-top {
 }
 .live-info-cate {
-  /* 너비가 자동으로 잡히게... */
   display: inline-block;
   line-height: 32px;
   font-size: 13px;
-  /* line-height: 32px의 반 */
   border-radius: 16px;
   background: rgba(0, 0, 0, 0.5);
   color: #fff;
   padding: 0 12px;
   margin-bottom: 10px;
 }
+
 .live-info-title {
   display: -webkit-box;
   font-size: 20px;
   line-height: 24px;
   /* 2줄 말줄임 출력 */
-  /* 2줄이니까 line-height 곱하기 2 */
   height: 48px;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -790,8 +837,8 @@ body {
   font-weight: 700;
   color: #fff;
 }
+
 .live-info-main {
-  /* 가운데 정렬 */
   position: absolute;
   top: 50%;
   left: 50%;
@@ -815,21 +862,19 @@ body {
 }
 
 .live-info-bottom {
-  /* 밑으로 보내기 */
   position: absolute;
-  bottom: 25px;
+  bottom: 20px;
   left: 0;
-  /* 조건 너비를 적어야됨 */
   width: 100%;
   padding: 0 20px;
 }
+
 .live-info-thumb {
   position: relative;
   float: left;
   width: 65px;
   height: 65px;
   border-radius: 3px;
-  /* 둥근네모모양안에 이미지를 넣어야 되기때문 */
   overflow: hidden;
   background: pink;
 }
@@ -840,16 +885,16 @@ body {
   transform: translate(-50%, -50%);
   height: 100%;
 }
+
 .live-info-desc {
   float: right;
-  /* 여백 */
   width: calc(100% - 65px - 10px);
 }
 .live-info-desc-title {
   font-size: 15px;
   line-height: 18px;
   color: #fff;
-  /* 한줄 말줄임 */
+  /* 1줄 말줄임 */
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -860,14 +905,15 @@ body {
   color: #fff;
   margin-top: 5px;
 }
+
 .live-info-desc-price em {
   color: #ef3e43;
   font-size: 20px;
   line-height: 24px;
   font-weight: 700;
-  /* 폰트 기울기 없어짐 */
   font-style: normal;
 }
+
 .live-info-desc-price b {
   color: #fff;
   font-size: 20px;
@@ -896,8 +942,8 @@ body {
   position: relative;
   width: 100%;
   height: 335px;
-  overflow: hidden;
   border: 1px solid rgba(0, 0, 0, 0.1);
+  overflow: hidden;
 }
 .books-img img {
   position: absolute;
@@ -934,9 +980,10 @@ body {
   padding-top: 30px;
   padding-bottom: 90px;
 }
-.event. .section-top {
+.event .section-top {
   margin-bottom: 20px;
 }
+
 .event .section-slide {
   height: 350px;
 }
@@ -961,9 +1008,9 @@ body {
   width: 100%;
   mix-blend-mode: multiply;
 }
+
 /* 하단 */
 .footer {
-  
 }
 .footer-menu {
   border-top: 1px solid #e5e5e5;
@@ -988,8 +1035,8 @@ body {
   height: 12px;
   background: rgba(0, 0, 0, 0.3);
 }
-.footer-menu-list li:last-child:after {
-  content: none; 
+.footer-menu-list > li:last-child::after {
+  content: none;
 }
 
 .footer-menu-list > li > a {
@@ -997,7 +1044,6 @@ body {
   line-height: 16px;
   color: #333;
   white-space: nowrap;
-
 }
 .footer-menu-list > li > a > strong {
   font-weight: 700;
@@ -1014,7 +1060,7 @@ body {
 }
 
 .footer-menu-list > li:hover .more-list {
-  display:  block;
+  display: block;
 }
 
 .more-list {
@@ -1024,7 +1070,7 @@ body {
   right: 0;
   padding: 17px;
   background: #fff;
-  box-shadow: 0 0 1.6rem rgba(0,0,0,.2);
+  box-shadow: 0 0 1.6rem rgba(0, 0, 0, 0.2);
   border-radius: 8px;
 }
 .more-list li {
@@ -1033,12 +1079,13 @@ body {
 .more-list li:last-child {
   margin-bottom: 0;
 }
+
 .more-list li a {
-  /* a태그에 줄내림 하지마! */
   white-space: nowrap;
   font-size: 13px;
   color: #333;
 }
+
 .footer-main {
   padding-top: 30px;
   padding-bottom: 55px;
@@ -1049,17 +1096,19 @@ body {
   padding-right: 30px;
   border-right: 1px solid rgba(0, 0, 0, 0.1);
 }
+
 .footer-main-right {
   float: right;
   width: 50%;
   padding-left: 30px;
 }
+
 .company-name {
   float: left;
   font-size: 15px;
   font-weight: 700;
   color: #111;
-  margin-left: 10px;
+  margin-right: 10px;
 }
 
 .company-info {
@@ -1073,9 +1122,10 @@ body {
   margin-bottom: 15px;
 }
 .company-info li:last-child {
-  margin-bottom: 0;
+  margin-bottom: 0px;
 }
-.company-info li span {}
+.company-info li span {
+}
 .company-info li span.f-line::after {
   display: inline-block;
   position: relative;
@@ -1086,13 +1136,12 @@ body {
   vertical-align: -1px;
   margin: 0 3px;
 }
+
 .company-info li a {
   color: #666;
 }
-/* a이면서 line */
 .company-info li a.line {
   color: #4a95ff;
-/* a태그 파란색줄(링크줄) 다시 생성 */
   text-decoration: underline;
 }
 .company-info li b {
@@ -1104,7 +1153,7 @@ body {
   line-height: 18px;
   color: rgba(0, 0, 0, 0.4);
 }
-/* caniuse.com을 통해 확인한다. */
+/* caniuse.com 을 통해 확인한다. */
 .copy {
   font-size: 11px;
   line-height: 18px;
