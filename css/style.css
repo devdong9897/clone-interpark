@@ -530,7 +530,14 @@ body {
   width: 100%;
   height: auto;
 }
-
+.sw-promotion-control {
+  position: relative;
+  display: none;
+  text-align: center;
+}
+.sw-promotion-pg {
+  display: inline-block;
+}
 @media screen and (max-width: 1280px) {
   .promotion .inner {
     height: 275px;
@@ -540,7 +547,7 @@ body {
   .promotion {
   }
   .promotion .inner {
-    height: 200px;
+    height: 300px;
     border-bottom: 8px solid #f0f4f4;
   }
   .promotion .section-top {
@@ -550,15 +557,54 @@ body {
   .promotion .sw-bt {
     display: none;
   }
+  .sw-promotion-control {
+    display: block;
+  }
+  /* swiper.js에서 자동으로 css 생성 */
+  .sw-promotion-pg .swiper-pagination-bullet {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    opacity: 0.2;
+    background-color: #000;
+  }
+  .sw-promotion-pg .swiper-pagination-bullet-active {
+    opacity: 1.0;
+    background-color: #000;
+  }
 }
 @media screen and (max-width: 760px) {
   .promotion .inner {
-    height: 190px;
+    height: 290px;
   }
   .sw-promotion {
+    /* 화면의 너비에 비해 줄어드는 것은 맞다 */
+    /* 하지만 일정 너비 이하로는 줄어들지 않았으면 좋겠다. */
     width: 50%;
+    min-width: 350px;
   }
+  .sw-promotion-control {
+    margin-top: -20px;
+    z-index: 999;
+  }
+  
+  .sw-promotion-pg .swiper-pagination-bullet {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    opacity: 0.3;
+    background-color: #fff;
+  } 
+  .sw-promotion-pg .swiper-pagination-bullet-active {
+    opacity: 1;
+    width: 8px;
+    height: 8px;
+    background-color: #fff;
+   }
 }
+
+
+
 
 /* 쇼핑추천 */
 .shopping {
