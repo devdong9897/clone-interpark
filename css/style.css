@@ -42,7 +42,11 @@ body {
 }
 @media screen and (max-width: 1024px) {
   .inner {
+    padding: 0 20px;
+    padding-bottom: 20px;
+    
     max-width: 760px;
+    border-bottom: 8px solid #f0f4f4;
   }
 }
 
@@ -99,7 +103,11 @@ body {
 .sw-prev::before {
   transform: scaleX(-100%);
 }
-
+@media screen and (max-width:1024) {
+  .sw-bt {
+    display: none;
+  }
+}
 /* section 내용 구조 */
 
 .wrap > section {
@@ -174,8 +182,8 @@ body {
 
 @media screen and (max-width: 1280px) {
   .wrap > section {
-
   }
+
   .section-top {
   }
   .section-top > h2 {
@@ -185,7 +193,7 @@ body {
 }
 @media screen and (max-width: 1024px) {
   .wrap > section {
-    padding-top: 30;
+    padding-top: 30px;
     padding-bottom: 40px;
   }
   .section-top {
@@ -198,6 +206,23 @@ body {
   .section-top > p {
     font-size: 15px;
     line-height: 18px;
+  }
+
+  .bt-link-shop {
+    display: block;
+    font-size: 15px;
+    line-height: 48px;
+    border-radius: 3px;
+  }
+  .section-top .btns {
+    margin: 15px 0;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  .section-top .btns a {
+    line-height: 34px;
+    padding: 0 14px;
+    margin-right: 5px;
   }
 }
 @media screen and (max-width: 760px) {
@@ -258,7 +283,6 @@ body {
     display: block;
   }
 }
-
 /* 플라잉 마이페이지 */
 .fix-mypage {
   display: none;
@@ -275,13 +299,13 @@ body {
   position: absolute;
   left: 0;
   bottom: 0;
-  width: 100%; 
+  width: 100%;
 }
 .fix-mypage-main .inner {
   border-radius: 18px 18px 0 0;
   background: #fff;
   overflow: hidden;
-  position: 30px 0;
+  padding: 30px 0;
   text-align: center;
 }
 .fix-mypage-title {
@@ -299,6 +323,7 @@ body {
 .fix-mypage-list li:last-child {
   margin-right: 0;
 }
+
 .fix-mypage-list li a {
   font-size: 14px;
   color: #666;
@@ -310,8 +335,8 @@ body {
   margin-bottom: 8px;
 }
 @media screen and (max-width: 1280px) {
-
 }
+
 /* 기본레이아웃 */
 .wrap {
 }
@@ -536,7 +561,7 @@ body {
 
 @media screen and (max-width: 1024px) {
   .header {
-    border-bottom: 8px solid #f0f4f4;
+    
   }
   .header .inner {
     padding-top: 15px;
@@ -598,7 +623,6 @@ body {
 
 /* 추천이벤트 */
 .promotion {
-  
 }
 
 .promotion .inner {
@@ -630,6 +654,7 @@ body {
 .sw-promotion-pg {
   display: inline-block;
 }
+
 @media screen and (max-width: 1280px) {
   .promotion .inner {
     height: 275px;
@@ -640,7 +665,7 @@ body {
   }
   .promotion .inner {
     height: 300px;
-    border-bottom: 8px solid #f0f4f4;
+    
   }
   .promotion .section-top {
     display: block;
@@ -649,10 +674,11 @@ body {
   .promotion .sw-bt {
     display: none;
   }
+
   .sw-promotion-control {
     display: block;
   }
-  /* swiper.js에서 자동으로 css 생성 */
+  /* swiper.js 에서 자동으로 css 생성 */
   .sw-promotion-pg .swiper-pagination-bullet {
     width: 8px;
     height: 8px;
@@ -661,50 +687,46 @@ body {
     background-color: #000;
   }
   .sw-promotion-pg .swiper-pagination-bullet-active {
-    opacity: 1.0;
+    opacity: 1;
     background-color: #000;
   }
 }
+
 @media screen and (max-width: 760px) {
   .promotion .inner {
     height: 290px;
   }
   .sw-promotion {
-    /* 화면의 너비에 비해 줄어드는 것은 맞다 */
-    /* 하지만 일정 너비 이하로는 줄어들지 않았으면 좋겠다. */
+    /* 화면의 너비에 비해 줄어드는 것은 맞다  */
+    /* 하지만 일정 너비 이하로는 줄어들지 않았으면 좋겠다.  */
     width: 50%;
     min-width: 350px;
   }
+
   .sw-promotion-control {
     margin-top: -20px;
     z-index: 999;
   }
-  
   .sw-promotion-pg .swiper-pagination-bullet {
     width: 6px;
     height: 6px;
     border-radius: 50%;
     opacity: 0.3;
     background-color: #fff;
-  } 
+  }
   .sw-promotion-pg .swiper-pagination-bullet-active {
     opacity: 1;
     width: 8px;
     height: 8px;
     background-color: #fff;
-   }
+  }
 }
-
-
-
 
 /* 쇼핑추천 */
 .shopping {
-  padding-top: 30px;
-  padding-bottom: 90px;
 }
 .shopping .section-slide {
-  height: 405px;
+  /* height: 405px; */
 }
 
 .sw-shopping {
@@ -744,6 +766,7 @@ body {
   line-height: 24px;
   color: #111;
   font-weight: 700;
+  white-space: nowrap;
 }
 .good-info-list li b span {
   color: #ef3e43;
@@ -770,6 +793,39 @@ body {
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
 }
+
+@media screen and (max-width: 1280px) {
+}
+@media screen and (max-width: 1024px) {
+  .good-info {
+    padding: 10px;
+  }
+}
+@media screen and (max-width: 800px) {
+  .good-info-list li b {
+    font-size: 15px;
+    line-height: 18px;
+    white-space: nowrap;
+  }
+  .good-info {
+    padding: 10px;
+  }
+}
+@media screen and (max-width: 760px) {
+  .good-info-list li b {
+    font-size: 12px;
+    line-height: 18px;
+  }
+  .good-info {
+    padding: 5px;
+  }
+  .good-info-list li p {
+    font-size: 13px;
+    line-height: 16px;
+    height: 32px;
+  }
+}
+
 /* 투어특가 */
 .tour {
   padding-top: 30px;
