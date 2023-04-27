@@ -44,7 +44,7 @@ body {
   .inner {
     padding: 0 20px;
     padding-bottom: 20px;
-    
+
     max-width: 760px;
     border-bottom: 8px solid #f0f4f4;
   }
@@ -103,7 +103,7 @@ body {
 .sw-prev::before {
   transform: scaleX(-100%);
 }
-@media screen and (max-width:1024) {
+@media screen and (max-width: 1024px) {
   .sw-bt {
     display: none;
   }
@@ -561,7 +561,6 @@ body {
 
 @media screen and (max-width: 1024px) {
   .header {
-    
   }
   .header .inner {
     padding-top: 15px;
@@ -665,7 +664,6 @@ body {
   }
   .promotion .inner {
     height: 300px;
-    
   }
   .promotion .section-top {
     display: block;
@@ -833,7 +831,7 @@ body {
 }
 
 .tour .section-slide {
-  height: 355px;
+  /* height: 355px; */
 }
 .sw-tour {
   height: 100%;
@@ -849,7 +847,14 @@ body {
 .tour-img {
   position: relative;
   width: 100%;
-  height: 245px;
+  max-height: 245px;
+
+  /* 1280px일때 높이가 245px 이다. */
+  /* 1280px이 100vm 라면 */
+  /* 245px은 몇 vw일까? */
+  /* 245 / 1280 * 100 */
+  height: 19.14vw;
+  
   overflow: hidden;
 }
 .tour-img img {
@@ -858,7 +863,7 @@ body {
   top: 50%;
   left: 50%;
   /* 좌표, 영역말고 내용 즉, 보이는 부분만 이동 */
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) scale(1.3);
 
   width: 100%;
 }
@@ -908,6 +913,33 @@ body {
   font-weight: 700;
   font-size: 20px;
 }
+@media screen and (max-width: 1024px) {
+  .tour-img {
+    /* height: 138px; */
+  }
+  .tour-info {
+    padding: 10px;
+  }
+  .tour-cate {
+    top: -22px;
+    line-height: 22px;
+    padding: 0 7px;
+    border-radius: 4px;
+  }
+  .tour-title {
+    font-size: 13px;
+    line-height: 15px;
+  }
+  .tour-price {
+    font-size: 15px;
+  }
+  .tour-price b {
+    font-size: 15px;
+    line-height: 18px;
+  }
+}
+@media screen and (max-width: 760px) {}
+
 
 /* 티켓랭킹 */
 .ticket {
