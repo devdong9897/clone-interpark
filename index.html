@@ -57,7 +57,7 @@
     <script src="js/prefixfree.min.js"></script>
     <!-- response -->
     <script src="js/respond.min.js"></script>
-
+      
     <!-- Link Swiper's CSS -->
     <link
       rel="stylesheet"
@@ -74,6 +74,30 @@
     <div class="fix-banner">
       <a href="#"><img src="images/wingBanner.png" alt="배너" /></a>
       <button class="gotop">goTop</button>
+    </div>
+    <!-- 퀵메뉴 -->
+    <div class="quick-menu">
+      <div class="inner">
+        <a href=""><img src="images/quick1.svg" alt="링크"></a>
+        <a href=""><img src="images/quick2.svg" alt="링크"></a>
+        <a href=""><img src="images/quick3.svg" alt="링크"></a>
+        <a href=""><img src="images/quick4.svg" alt="링크"></a>
+        <a href=""><img src="images/quick5.svg" alt="링크"></a>
+      </div>
+    </div>
+    <!-- 플라잉 마이페이 -->
+    <div class="fix-mypage">
+      <div class="fix-mypage-main">
+        <div class="inner">
+          <h2 class="fix-mypage-title">마이페이지를 선택해주세요.</h2>
+          <ul class="fix-mypage-list clearfix">
+            <li><a href="#"><img src="images/icon_tour.png" alt="투어">투어 MY</a></li>
+            <li><a href="#"><img src="images/icon_ticket.png" alt="티켓">티켓 MY</a></li>
+            <li><a href="#"><img src="images/icon_shopping.png" alt="쇼핑">쇼핑 MY</a></li>
+            <li><a href="#"><img src="images/icon_book.png" alt="도서">도서 MY</a></li>
+          </ul>
+        </div>
+      </div>
     </div>
     <!-- 전체 레이아웃 -->
     <div class="wrap">
@@ -333,13 +357,97 @@
                     </div>
                   </a>
                 </div>
+                <div class="swiper-slide">
+                  <a href="#" class="good">
+                    <img src="images/good1.png" alt="제품1" />
+                    <div class="good-info">
+                      <ul class="good-info-list">
+                        <li>
+                          <b><span>5%</span> 11,950원</b>
+                        </li>
+                        <li><p>맥 MAC 립스틱</p></li>
+                      </ul>
+                    </div>
+                  </a>
+                </div>
+                <div class="swiper-slide">
+                  <a href="#" class="good">
+                    <img src="images/good2.jpg" alt="제품1" />
+                    <div class="good-info">
+                      <ul class="good-info-list">
+                        <li>
+                          <b><span>5%</span> 11,950원</b>
+                        </li>
+                        <li>
+                          <p>
+                            [장터할매]2023년 햇양파 중품/짱아치용 특품 3kg~10kg
+                          </p>
+                        </li>
+                      </ul>
+                    </div>
+                  </a>
+                </div>
+                <div class="swiper-slide">
+                  <a href="#" class="good">
+                    <img src="images/good3.jpg" alt="제품1" />
+                    <div class="good-info">
+                      <ul class="good-info-list">
+                        <li>
+                          <b><span>5%</span> 11,950원</b>
+                        </li>
+                        <li>
+                          <p>
+                            QCY GTS 스마트워치 2세대 블랙/ 블루투스 통화가능 /
+                            실리콘 스트랩 메탈 스트랩 TPU 보호필름 추가구매
+                          </p>
+                        </li>
+                      </ul>
+                    </div>
+                  </a>
+                </div>
+                <div class="swiper-slide">
+                  <a href="#" class="good">
+                    <img src="images/good4.jpg" alt="제품1" />
+                    <div class="good-info">
+                      <ul class="good-info-list">
+                        <li>
+                          <b><span>5%</span> 11,950원</b>
+                        </li>
+                        <li><p>[베베당] 유기농 롱스틱 골고루 10봉 세트</p></li>
+                      </ul>
+                    </div>
+                  </a>
+                </div>
               </div>
             </div>
             <!-- Shopping Swiper -->
             <script>
               new Swiper(".sw-shopping", {
-                slidesPerView: 4,
+                slidesPerView: 8,
+                grid: {
+                  rows: 2,
+                },
                 spaceBetween: 24,
+                breakpoints: {
+                  1024: {
+                    spaceBetween: 32,
+                    slidesPerView: 3,
+                    // 화면당 3개씩 슬라이드 이동
+                    slidesPerGroup: 3,
+                    grid: {
+                      rows: 1,
+                    },
+                  },
+                  1280: {
+                    spaceBetween: 26,
+                    slidesPerView: 4,
+                    // 화면당 4개씩 슬라이드 이동
+                    slidesPerGroup: 4,
+                    grid: {
+                      rows: 1,
+                    },
+                  },
+                },
               });
             </script>
           </div>
