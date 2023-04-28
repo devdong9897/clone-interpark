@@ -847,14 +847,14 @@ body {
 .tour-img {
   position: relative;
   width: 100%;
-  max-height: 245px;
 
-  /* 1280px일때 높이가 245px 이다. */
-  /* 1280px이 100vm 라면 */
-  /* 245px은 몇 vw일까? */
-  /* 245 / 1280 * 100 */
+  /* 1280px 일때 높이가 245 px 이다. */
+  /* 1280px 이 100vw 라면  */
+  /* 245px 은 몇 vw 일까? */
+  /*  245 / 1280 * 100  */
+  max-height: 245px;
   height: 19.14vw;
-  
+
   overflow: hidden;
 }
 .tour-img img {
@@ -913,6 +913,7 @@ body {
   font-weight: 700;
   font-size: 20px;
 }
+
 @media screen and (max-width: 1024px) {
   .tour-img {
     /* height: 138px; */
@@ -938,8 +939,8 @@ body {
     line-height: 18px;
   }
 }
-@media screen and (max-width: 760px) {}
-
+@media screen and (max-width: 760px) {
+}
 
 /* 티켓랭킹 */
 .ticket {
@@ -1057,7 +1058,7 @@ body {
     transform: translate(-50%, -50%) scale(1);
   }
 }
-@media screen and (max-width: 1240px) {
+@media screen and (max-width: 1024px) {
   /* .ticket .section-slide {
     width: 120%;
     overflow: hidden;
@@ -1070,10 +1071,11 @@ body {
   .ticket-img img {
     transform: translate(-50%, -50%) scale(1.4);
   }
+  .sw-ticket .swiper-slide {
+    width: 150px;
+  }
 }
-
 @media screen and (max-width: 760px) {
-  
   .ticket-info {
     padding: 10px 5px;
   }
@@ -1084,7 +1086,6 @@ body {
     font-weight: 400;
   }
   .ticket-title b {
-
   }
   .ticket-hall {
     font-size: 13px;
@@ -1262,13 +1263,11 @@ body {
   font-weight: 700;
 }
 
-@media screen and (max-width:1280px) {
-
-}
-@media screen and (max-width:1024px) {
+@media screen and (max-width: 1024px) {
   .live .section-slide {
     height: 285px;
   }
+
   .live-info {
     padding: 12px;
   }
@@ -1295,7 +1294,7 @@ body {
   .live-info-desc {
     float: right;
     width: calc(100% - 40px - 10px);
-}
+  }
   .live-info-thumb {
     width: 40px;
     height: 40px;
@@ -1309,6 +1308,7 @@ body {
     white-space: nowrap;
     margin-top: -5px;
   }
+
   .live-info-desc-price em {
     font-size: 13px;
   }
@@ -1316,10 +1316,14 @@ body {
     font-size: 13px;
   }
 }
-@media screen and (max-width:760px) {
+@media screen and (max-width: 760px) {
   .live .section-slide {
     height: 230px;
   }
+  .live .section-slide .sw-bt {
+    top: 50%;
+  }
+
   .live-info-title {
     font-size: 14px;
     line-height: 17px;
@@ -1328,7 +1332,6 @@ body {
   .live-info-date {
     font-size: 13px;
     line-height: 16px;
-    white-space: nowrap;
   }
   .live-info-time {
     font-size: 24px;
@@ -1340,7 +1343,7 @@ body {
   .live-info-desc {
     float: right;
     width: 100%;
-}
+  }
   /* 화면이 좁을 때 이미지 숨김 */
   .live-info-thumb {
     display: none;
@@ -1353,7 +1356,11 @@ body {
   padding-bottom: 90px;
 }
 .books .section-slide {
-  height: 400px;
+  /* height: 400px; */
+}
+
+.books .section-slide .sw-bt {
+  top: 41%;
 }
 .sw-books {
   height: 100%;
@@ -1399,6 +1406,36 @@ body {
   font-size: 20px;
   font-weight: 700;
   font-style: normal;
+}
+
+@media screen and (max-width: 1280px) {
+  .books .section-slide .sw-bt {
+    top: 44%;
+  }
+  .books-img {
+    height: 457px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .books-img {
+    height: 322px;
+  }
+  .books-info-title {
+    font-size: 13px;
+    line-height: 15px;
+    margin: 4px 0;
+  }
+  .books-info-price {
+    font-size: 14px;
+  }
+  .books-info-price em {
+    font-size: 14px;
+  }
+}
+@media screen and (max-width: 760px) {
+  .books-img {
+    height: 41.66vw;
+  }
 }
 
 /* 이벤트 */
