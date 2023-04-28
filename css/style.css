@@ -264,8 +264,8 @@ body {
 .quick-menu {
   display: none;
   position: fixed;
-  left: 0;
   bottom: 0;
+  left: 0;
   width: 100%;
   background: #fff;
   z-index: 99;
@@ -287,8 +287,8 @@ body {
 .fix-mypage {
   display: none;
   position: fixed;
-  left: 0;
   top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.6);
@@ -297,8 +297,8 @@ body {
 
 .fix-mypage-main {
   position: absolute;
-  left: 0;
   bottom: 0;
+  left: 0;
   width: 100%;
 }
 .fix-mypage-main .inner {
@@ -329,8 +329,8 @@ body {
   color: #666;
 }
 .fix-mypage-list li a img {
-  width: 48px;
   display: block;
+  width: 48px;
   margin: 0 auto;
   margin-bottom: 8px;
 }
@@ -496,10 +496,10 @@ body {
 }
 
 .mb-mypage {
-  position: absolute;
-  right: 10px;
-  top: -5px;
   display: none;
+  position: absolute;
+  top: -5px;
+  right: 10px;
 }
 
 .header-down {
@@ -576,9 +576,9 @@ body {
     width: 100%;
   }
   .search {
+    top: 140px;
     left: 50%;
     transform: translateX(-50%);
-    top: 140px;
   }
 
   .member-list {
@@ -646,8 +646,8 @@ body {
   height: auto;
 }
 .sw-promotion-control {
-  position: relative;
   display: none;
+  position: relative;
   text-align: center;
 }
 .sw-promotion-pg {
@@ -1137,7 +1137,7 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) scale(1.2);
 
   height: 100%;
 }
@@ -1260,6 +1260,91 @@ body {
   font-size: 20px;
   line-height: 24px;
   font-weight: 700;
+}
+
+@media screen and (max-width:1280px) {
+
+}
+@media screen and (max-width:1024px) {
+  .live .section-slide {
+    height: 285px;
+  }
+  .live-info {
+    padding: 12px;
+  }
+  .live-info-cate {
+    font-size: 10px;
+    line-height: 20px;
+    border-radius: 10px;
+    padding: 0 7px;
+  }
+  .live-info-title {
+    font-size: 14px;
+    line-height: 17px;
+    height: 34px;
+  }
+  .live-info-date {
+    font-size: 18px;
+    line-height: 21px;
+    white-space: nowrap;
+  }
+  .live-info-time {
+    font-size: 32px;
+    line-height: 38px;
+  }
+  .live-info-desc {
+    float: right;
+    width: calc(100% - 40px - 10px);
+}
+  .live-info-thumb {
+    width: 40px;
+    height: 40px;
+  }
+  .live-info-desc-title {
+    font-size: 13px;
+    margin-top: 5px;
+  }
+  .live-info-desc-price {
+    font-size: 13px;
+    white-space: nowrap;
+    margin-top: -5px;
+  }
+  .live-info-desc-price em {
+    font-size: 13px;
+  }
+  .live-info-desc-price b {
+    font-size: 13px;
+  }
+}
+@media screen and (max-width:760px) {
+  .live .section-slide {
+    height: 230px;
+  }
+  .live-info-title {
+    font-size: 14px;
+    line-height: 17px;
+    height: 34px;
+  }
+  .live-info-date {
+    font-size: 13px;
+    line-height: 16px;
+    white-space: nowrap;
+  }
+  .live-info-time {
+    font-size: 24px;
+    line-height: 28px;
+  }
+  .live-info-bottom {
+    padding: 0 10px;
+  }
+  .live-info-desc {
+    float: right;
+    width: 100%;
+}
+  /* 화면이 좁을 때 이미지 숨김 */
+  .live-info-thumb {
+    display: none;
+  }
 }
 
 /* 오늘의 도서 */
