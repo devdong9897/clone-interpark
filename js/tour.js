@@ -8,26 +8,34 @@
 window.addEventListener("load", function () {
   // tour 데이터 파싱 및 슬라이드 제작
   function parseTour(_cate) {
-    const tourXhttp = new XMLHttpRequest();
-    tourXhttp.onreadystatechange = function (event) {
-      const req = event.target;
-      if (req.readyState === XMLHttpRequest.DONE) {
-        let data = JSON.parse(req.response);
-        makeTourSlide(data);
-      }
-    };
+  
 
     if (_cate === "망설이면 품절") {
-      tourXhttp.open("GET", "data/tourdataJS.json");
+      // tourXhttp.open("GET", "data/tourdataJS.json");
+      fetch("data/tourdataJS.json")
+      .then((res) => res.json())
+      .then(result => makeTourSlide(result))
+      .catch((err) => console.log(err));
     } else if (_cate === "패키지") {
-      tourXhttp.open("GET", "data/tourdata1.json");
+      // tourXhttp.open("GET", "data/tourdata1.json");
+      fetch("data/tourdata1.json")
+      .then((res) => res.json())
+      .then(result => makeTourSlide(result))
+      .catch((err) => console.log(err));
     } else if (_cate === "숙소") {
-      tourXhttp.open("GET", "data/tourdata2.json");
+      // tourXhttp.open("GET", "data/tourdata2.json");
+      fetch("data/tourdata2.json")
+      .then((res) => res.json())
+      .then(result => makeTourSlide(result))
+      .catch((err) => console.log(err));
     } else if (_cate === "해외숙소") {
-      tourXhttp.open("GET", "data/tourdata3.json");
+      // tourXhttp.open("GET", "data/tourdata3.json");
+      fetch("data/tourdata3.json")
+      .then((res) => res.json())
+      .then(result => makeTourSlide(result))
+      .catch((err) => console.log(err));
     }
 
-    tourXhttp.send();
   }
   parseTour("망설이면 품절");
 
