@@ -50,7 +50,7 @@ body {
 }
 .modal-active {
   overflow: hidden !important;
-}
+}       
 
 /* 공통클래스 */
 .inner {
