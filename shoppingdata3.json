@@ -1,0 +1,17 @@
+{
+  "good_count": 2,
+  "good_1": {
+    "link": "#",
+    "pic": "good1.png",
+    "product": "맥 MAC 립스틱",
+    "ratio": 5,
+    "price": "11,950"
+  },
+  "good_2": {
+    "link": "#",
+    "pic": "good2.jpg",
+    "product": "[장터할매]2023년 햇양파 중품/짱아치용 특품 3kg~10kg",
+    "ratio": 5,
+    "price": "11,950"
+  }
+}
